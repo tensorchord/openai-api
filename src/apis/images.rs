@@ -6,7 +6,7 @@
 use super::{IMAGES_CREATE, IMAGES_EDIT, IMAGES_VARIATIONS};
 use crate::requests::Requests;
 use crate::*;
-use multipart::client::lazy::Multipart;
+use crate::multipart::Multipart;
 use serde::{Deserialize, Serialize};
 use std::{fs::File, str};
 

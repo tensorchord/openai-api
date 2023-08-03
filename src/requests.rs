@@ -1,6 +1,6 @@
 use crate::openai::OpenAI;
 use crate::*;
-use multipart::client::lazy::Multipart;
+use crate::multipart::Multipart;
 
 #[cfg(not(test))]
 use log::{debug, error, info};
@@ -44,7 +44,7 @@ impl Requests for OpenAI {
 	}
 
 	fn post_multipart(&self, sub_url: &str, mut multipart: Multipart) -> ApiResult<Json> {
-		info!("===> 🚀\n\tPost multipart api: {sub_url}, multipart: {:?}", multipart);
+		info!("===> 🚀\n\tPost multipart api: {sub_url}");
 
 		let form_data = multipart.prepare().unwrap();
 
